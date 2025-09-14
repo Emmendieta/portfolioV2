@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
 
-const lenguageSchema = new mongoose.Schema(
+const languageSchema  = new mongoose.Schema(
     {
-        title: { type: String, require: true },
-        percent: { type: Number, require: true },
-        thumbnails: []
+        title: { type: String, required: true },
+        percent: { type: Number, required: true },
+        thumbnails: [{ type: String }]
     },
     { timestamps: true }
 );
 
-export const LenguagesModel = mongoose.model("lenguages", lenguageSchema);
+export const LanguagesModel  = mongoose.model("languages", languageSchema );

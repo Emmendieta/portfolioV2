@@ -1,6 +1,6 @@
 import { isValidObjectId } from "mongoose";
 import { verifyToken } from "../helpers/token.helper.js";
-import { usersRepository } from "../repositories/repository";
+import { usersRepository } from "../repositories/repository.js";
 
 const setupPolicies = (policies) => async (req, res, next) => {
     try {

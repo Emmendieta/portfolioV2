@@ -1,5 +1,5 @@
-import viewsController from "../../controllers/views.controller.js";
-import RouterHelper from "../../helpers/router.helper.js";
+import viewsController from "../controllers/views.controller.js";
+import RouterHelper from "../helpers/router.helper.js";
 
 class ViewsRouter extends RouterHelper {
     constructor() {

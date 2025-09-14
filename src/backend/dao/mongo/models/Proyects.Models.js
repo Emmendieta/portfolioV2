@@ -2,24 +2,17 @@ import mongoose from "mongoose";
 
 const proyectSchema = new mongoose.Schema(
     {
-        title: {type: String, require: true },
-        dateStart: {type: Date},
-        dateEnd: { type: Date},
+        title: {type: String, required: true },
+        dateStart: { type: Date },
+        dateEnd: { type: Date },
         linkProyect: { type: String },
         linkCompany: { type: String },
-        description: { type: String, require: true },
-        lenguages: {
-            type: [
-                {
-                    lenguage: {
-                        type: mongoose.Schema.Types.ObjectId,
-                        ref: "lenguages",
-                        require: true
-                    }
-                }
-            ],
-            default: [""]
-        }
+        description: { type: String, required: true },
+        languages: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "languages",
+            required: true
+        }]
     },
     { timestamps: true }
 );

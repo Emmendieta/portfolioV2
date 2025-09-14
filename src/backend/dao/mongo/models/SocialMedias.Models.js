@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
 
-const socialMediasSChema = new mongoose.Schema(
+const socialMediasSchema = new mongoose.Schema(
     {
-        title: { type: String, require: true },
-        linkSocial: { type: String, require: true },
-        thumbnails: []
+        title: { type: String, required: true },
+        linkSocial: { type: String, required: true },
+        thumbnails: [{ type: String }]
     },
     { timestamps: true }
 );
 
-export const SocialMediaModel = mongoose.model("socialMedias", socialMediasSChema);
+export const SocialMediaModel = mongoose.model("socialMedias", socialMediasSchema);

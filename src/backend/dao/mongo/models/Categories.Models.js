@@ -2,8 +2,8 @@ import mongoose from "mongoose";
 
 const categorySchema = new mongoose.Schema(
     {
-        title: { tpye: String, require: true},
-        thumbnails: []
+        title: { type: String, required: true},
+        thumbnails: [{ type: String }]
     },
     { timestamps: true }
 );

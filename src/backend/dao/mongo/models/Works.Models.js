@@ -2,13 +2,13 @@ import mongoose from "mongoose";
 
 const worksSchema = new mongoose.Schema(
     {
-        jobTitle: { type: String, require: true },
-        dateStart: { type: Date, require: true },
+        jobTitle: { type: String, required: true },
+        dateStart: { type: Date, required: true },
         dateEnd: { type: Date },
-        company: { type: String, require: true },
+        company: { type: String, required: true },
         linkCompany: { type: String },
-        description: { type: String, require: true },
-        thumbnails: []
+        description: { type: String, required: true },
+        thumbnails: [{ type: String }]
     },
     { timestamps: true }    
 );

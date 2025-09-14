@@ -11,6 +11,7 @@ import cookieParser from "cookie-parser";
 import morgan from "morgan";
 import pathHandler from "./backend/middlewares/pathHandler.mid.js";
 import errorHandler from "./backend/middlewares/errorHandler.mid.js";
+import indexRouter from "./backend/routes/index.router.js";
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -56,7 +57,7 @@ app.listen(PORT, ready);
 
 /* Router Setting */
 
-//app.use("/", indexRouter);
+app.use("/", indexRouter);
 app.use(pathHandler);
 app.use(errorHandler);
 
