@@ -18,7 +18,7 @@ const proyectSchema = new mongoose.Schema(
                     }
                 }
             ],
-            default: ["esp"]
+            default: [""]
         }
     },
     { timestamps: true }

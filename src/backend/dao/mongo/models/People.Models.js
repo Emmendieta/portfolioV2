@@ -12,11 +12,7 @@ const peopleSchema = new mongoose.Schema(
         city: { type: String },
         province: {  type: String },
         country: { type: String },
-        thumbnails: [],
-        user: { 
-            type: mongoose.Schema.Types.ObjectId, 
-            ref: "users",
-        }
+        thumbnails: []
     },
     { timestamps: true }
 );
