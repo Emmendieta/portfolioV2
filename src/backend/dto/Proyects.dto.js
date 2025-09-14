@@ -18,4 +18,7 @@ class ProyectsDTO {
             this.updateAt = new Date();
         };
     };
-}
+};
+
+export default ProyectsDTO;
+

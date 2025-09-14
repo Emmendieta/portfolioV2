@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema(
         email: { type: String, require: true },
         password: { type: String, require: true },
         role: { type: String, default: 'user' }
+        //FALTA ASOCIAR: EDUCATIONS, LENGUAGES, PROYECTS, SOCIALMEDIAS, WORKS
     },
     { timestamps: true}
 );
