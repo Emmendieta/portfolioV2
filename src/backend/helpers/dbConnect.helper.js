@@ -9,4 +9,6 @@ const dbConnect = async (link) => {
         // FALTA LOGGER PARA ERROR.
         console.log(error);
     }
-}
+};
+
+export default dbConnect;

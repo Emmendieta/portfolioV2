@@ -13,3 +13,5 @@ const passportCB = (strategy) => async (req, res, next) => {
         next()
     })(req, res, next);
 };
+
+export default passportCB;
