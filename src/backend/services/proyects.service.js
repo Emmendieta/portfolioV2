@@ -1,0 +1,18 @@
+import { proyectsRepository } from "../repositories/repository.js";
+
+class ProyectsServices {
+    constructor() {
+        this.manager = proyectsRepository;
+    };
+
+    createOne = async (data) => await this.manager.createOne(data);
+    readAll = async () => await this.manager.readAll();
+    readById = async (pyid) => await this.manager.readById(pyid);
+    readByFilter = async (filter) => await this.manager.readByFilter(filter);
+    updateByid = async (pyid, data) => await this.manager.updateById(pyid, data);
+    destroyById = async (pyid) => await this.manager.destroyById(pyid);
+};
+
+const proyectsService = new ProyectsServices(proyectsRepository);
+
+export default proyectsService;
