@@ -9,7 +9,7 @@ class PeopleDTO {
         this.firstName = data.firstName;
         this.lastName = data.lastName;
         this.dni = data.dni;
-        this.cuil = data.cuit;
+        this.cuil = data.cuil;
         this.birthday = data.birthday;
         this.jobTitles = data.jobTitles;
         this.about = data.about;
