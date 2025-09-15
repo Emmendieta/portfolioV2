@@ -1,6 +1,7 @@
 import RouterHelper from "../helpers/router.helper.js";
 import authRouter from "./api/auth.router.js";
 import peopleRouter from "./api/people.router.js";
+import usersRouter from "./api/users.router.js";
 
 class ApiRouter extends RouterHelper {
     constructor() {
@@ -11,6 +12,7 @@ class ApiRouter extends RouterHelper {
     init = () => {
         this.use("/auth", authRouter);
         this.use("/people", peopleRouter);
+        this.use("/users", usersRouter);
     };
 };
 
