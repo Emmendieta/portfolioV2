@@ -1,6 +1,6 @@
 import { CategoryModel } from "./models/Categories.Models.js";
 import { EducationModel }  from "./models/Educations.Models.js";
-import { LanguagesModel } from "./models/Lenguages.Models.js";
+import { LanguagesModel } from "./models/Languages.Models.js";
 import { PeopleModel } from "./models/People.Models.js";
 import { ProyectsModel } from "./models/Proyects.Models.js";
 import { SocialMediaModel } from "./models/SocialMedias.Models.js";
@@ -23,11 +23,11 @@ class DaoMongo {
 
 const categoryManager = new DaoMongo(CategoryModel);
 const educationManager = new DaoMongo(EducationModel);
-const lenguagesManager = new DaoMongo(LanguagesModel);
+const languagesManager = new DaoMongo(LanguagesModel);
 const peopleManager = new DaoMongo(PeopleModel);
 const proyectsManager = new DaoMongo(ProyectsModel);
 const socialMediasManager = new DaoMongo(SocialMediaModel);
 const usersManager = new DaoMongo(UsersModel);
 const worksManager = new DaoMongo(WorksModel);
 
-export { categoryManager, educationManager, lenguagesManager, peopleManager, proyectsManager, socialMediasManager,usersManager, worksManager };
+export { categoryManager, educationManager, languagesManager, peopleManager, proyectsManager, socialMediasManager,usersManager, worksManager };

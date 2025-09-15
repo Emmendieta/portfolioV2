@@ -5,6 +5,7 @@ import usersRouter from "./api/users.router.js";
 import categoriesRouter from "./api/categories.router.js";
 import socialMediasRouter from "./api/socialMedias.router.js";
 import educationsRouter from "./api/educations.router.js";
+import languagesRouter from "./api/languages.router.js";
 
 class ApiRouter extends RouterHelper {
     constructor() {
@@ -19,6 +20,7 @@ class ApiRouter extends RouterHelper {
         this.use("/categories", categoriesRouter);
         this.use("/social-medias", socialMediasRouter);
         this.use("/educations", educationsRouter);
+        this.use("/languages", languagesRouter);
     };
 };
 

@@ -1,7 +1,7 @@
-import { categoryManager, educationManager, lenguagesManager, peopleManager, proyectsManager, socialMediasManager, usersManager, worksManager } from "../dao/mongo/dao.mongo.js";
+import { categoryManager, educationManager, languagesManager, peopleManager, proyectsManager, socialMediasManager, usersManager, worksManager } from "../dao/mongo/dao.mongo.js";
 import CategoriesDTO from "../dto/Categories.dto.js";
 import EducationsDTO from "../dto/Educations.dto.js";
-import LanguagesDTO from "../dto/Lenguages.dto.js";
+import LanguagesDTO from "../dto/Languages.dto.js";
 import PeopleDTO from "../dto/People.dto.js";
 import ProyectsDTO from "../dto/Proyects.dto.js";
 import SocialMediasDTO from "../dto/SocialMedias.dto.js";
@@ -24,13 +24,13 @@ class Repository {
 
 const categoriesRepository = new Repository(categoryManager, CategoriesDTO);
 const educationsRepository = new Repository(educationManager, EducationsDTO);
-const lenguagesRepository = new Repository(lenguagesManager, LanguagesDTO);
+const languagesRepository = new Repository(languagesManager, LanguagesDTO);
 const peopleRepositry = new Repository(peopleManager, PeopleDTO);
 const proyectsRepository = new Repository(proyectsManager, ProyectsDTO);
 const socialMediasRepository = new Repository(socialMediasManager, SocialMediasDTO);
 const usersRepository = new Repository(usersManager, UsersDTO);
 const worksRepository = new Repository(worksManager, WorksDTO);
 
-export {categoriesRepository, educationsRepository, lenguagesRepository, peopleRepositry, proyectsRepository, socialMediasRepository, usersRepository, worksRepository };
+export {categoriesRepository, educationsRepository, languagesRepository, peopleRepositry, proyectsRepository, socialMediasRepository, usersRepository, worksRepository };
 
 

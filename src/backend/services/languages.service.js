@@ -1,8 +1,8 @@
-import { lenguagesRepository } from "../repositories/repository.js";
+import { languagesRepository } from "../repositories/repository.js";
 
-class LenguagesService {
+class LanguagesService {
     constructor() {
-        this.manager = lenguagesRepository;
+        this.manager = languagesRepository;
     };
 
     createOne = async (data) => await this.manager.createOne(data);
@@ -13,6 +13,6 @@ class LenguagesService {
     destroyById = async (lid) => this.manager.destroyById(lid);
 };
 
-const lenguagesService = new LenguagesService(lenguagesRepository);
+const languagesService = new LanguagesService(languagesRepository);
 
-export default lenguagesService;
+export default languagesService;
