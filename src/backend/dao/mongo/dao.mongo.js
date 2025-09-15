@@ -11,7 +11,7 @@ class DaoMongo {
     constructor(model) {
         this.model = model;
     };
-    createOne = async (data) => await this.model.insertOne(data);
+    createOne = async (data) => await this.model.create(data);
     createMany = async (data) => await this.model.insertMany(data);
     readAll = async (filter) => await this.model.find(filter);
     readById = async (id) => await this.model.findById(id);

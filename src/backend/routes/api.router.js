@@ -7,6 +7,7 @@ import socialMediasRouter from "./api/socialMedias.router.js";
 import educationsRouter from "./api/educations.router.js";
 import languagesRouter from "./api/languages.router.js";
 import worksRouter from "./api/works.router.js";
+import proyectsRouter from "./api/proyects.router.js";
 
 class ApiRouter extends RouterHelper {
     constructor() {
@@ -23,6 +24,7 @@ class ApiRouter extends RouterHelper {
         this.use("/educations", educationsRouter);
         this.use("/languages", languagesRouter);
         this.use("/works", worksRouter);
+        this.use("/proyects", proyectsRouter);
     };
 };
 

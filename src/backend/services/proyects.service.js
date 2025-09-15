@@ -9,7 +9,7 @@ class ProyectsServices {
     readAll = async () => await this.manager.readAll();
     readById = async (pyid) => await this.manager.readById(pyid);
     readByFilter = async (filter) => await this.manager.readByFilter(filter);
-    updateByid = async (pyid, data) => await this.manager.updateById(pyid, data);
+    updateById = async (pyid, data) => await this.manager.updateById(pyid, data);
     destroyById = async (pyid) => await this.manager.destroyById(pyid);
 };
 
