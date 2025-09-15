@@ -17,7 +17,6 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 const ready = async () => {
-    console.log(process.env.PERSISTENCE);
     if (process.env.PERSISTENCE === "mongo") {
         await dbConnect(process.env.LINK_MONGODB);
         //FALTA LOGGER
