@@ -3,6 +3,7 @@ import authRouter from "./api/auth.router.js";
 import peopleRouter from "./api/people.router.js";
 import usersRouter from "./api/users.router.js";
 import categoriesRouter from "./api/categories.router.js";
+import socialMediasRouter from "./api/socialMedias.router.js";
 
 class ApiRouter extends RouterHelper {
     constructor() {
@@ -15,6 +16,7 @@ class ApiRouter extends RouterHelper {
         this.use("/people", peopleRouter);
         this.use("/users", usersRouter);
         this.use("/categories", categoriesRouter);
+        this.use("/social-medias", socialMediasRouter);
     };
 };
 
