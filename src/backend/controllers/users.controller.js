@@ -13,10 +13,10 @@ class UsersController {
         const verify = await this.verifyUserAndEmailFun(data.user, data.email);
         if (verify === 0 || verify === 1 || verify === 2) { return res.json400("User or Emial alredy Exist!(C)"); }
         else {
-        const passHash = createHash(data.password)
-        data.password = passHash;
-        const user = await this.uService.createOne(data);
-        return res.json201(user);
+            const passHash = createHash(data.password)
+            data.password = passHash;
+            const user = await this.uService.createOne(data);
+            return res.json201(user);
         };
     };
 
@@ -34,6 +34,21 @@ class UsersController {
         const user = await this.uService.readByFilter({ email });
         if (!user) { return res.json404("User Not Found!(C)"); };
         return res.json200(user);
+    };
+
+    getuserByIdPopulated = async (req, res) => {
+        try {
+            const { uid } = req.params;
+            if (!isValidObjectId(uid)) { return res.json400("Invalid User ID!(C)"); };
+            const { populate } = req.query;
+            const populateFields = populate ? populate.split(",") : [];
+            const user = await this.uService.readByIdAndPopulate(uid, populateFields);
+            if (!user) { return res.json404("User Not Found!(C)"); };
+            return res.json200(user);
+        } catch (error) {
+            console.log("Error in getUserByIdPopulated!", error);
+            return res.json500();
+        };
     };
 
     getAllUsers = async (req, res) => {
@@ -59,12 +74,12 @@ class UsersController {
                 return res.json200(userUpdated);
             };
         } else {
-        if(data.password) {
-            const passHash = createHash(data.password);
-            data.password = passHash;
-        };
-        const userUpdated = await this.uService.updateById(uid, data);
-        return res.json200(userUpdated);
+            if (data.password) {
+                const passHash = createHash(data.password);
+                data.password = passHash;
+            };
+            const userUpdated = await this.uService.updateById(uid, data);
+            return res.json200(userUpdated);
         };
     };
 

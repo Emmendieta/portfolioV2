@@ -10,7 +10,9 @@ class UsersDTO {
         this.email = data.email;
         this.password = data.password;
         this.role = data.role || ["user"];
+        this.person = data.person;
         if (PERSISTENCE !== "mongo") {
+            //FALTA PARA CREAR DATOS DE LAS ASOCIACIONES CUANDO NO ES MONGODB
             this.createdAt = new Date();
             this.updateAt = new Date();
         };

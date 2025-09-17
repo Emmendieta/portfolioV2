@@ -15,6 +15,17 @@ class DaoMongo {
     createMany = async (data) => await this.model.insertMany(data);
     readAll = async (filter) => await this.model.find(filter);
     readById = async (id) => await this.model.findById(id);
+
+    readByIdAndPopulate = async (id, populateFileds = []) => {
+        let query = this.model.findById(id);
+        if (populateFileds.length > 0) {
+            populateFileds.forEach(field => {
+                query = query.populate(field);
+            });
+            return await query;
+        }
+    };
+
     readByFilter = async (filter) => await this.model.findOne(filter);
     updateById = async (id, data) => await this.model.findByIdAndUpdate(id, data, { new: true });
     destroyById = async (id) =>await this.model.findByIdAndDelete(id);

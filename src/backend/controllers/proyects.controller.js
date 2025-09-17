@@ -29,6 +29,15 @@ class ProyectsController {
         //Falta Buscar por Filtro!
     };
 
+
+    getProyectByIdPopulated = async (req, res) => {
+        const { pyid } = req.params;
+        if (!isValidObjectId(pyid)) { return res.json400("Invalid Proyect Id!(C)"); };
+        const proyect = await this.pService.readByIdAndPopulate(pyid, ["languages"]);
+        if (!proyect) { return res.json404("Proyect Not Found!(C)"); };
+        return res.json200(proyect);
+    };
+
     getAllProyects = async (req, res) => {
         const proyects = await this.pService.readAll();
         if (proyects.length === 0) { return res.json404("No Proyects Found!(C)"); };
