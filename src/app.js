@@ -13,6 +13,7 @@ import pathHandler from "./backend/middlewares/pathHandler.mid.js";
 import errorHandler from "./backend/middlewares/errorHandler.mid.js";
 import indexRouter from "./backend/routes/index.router.js";
 
+
 const app = express();
 const PORT = process.env.PORT || 8000;
 
@@ -31,7 +32,7 @@ const ready = async () => {
 };
 
 /* Engine Setting */
-app.engine("handlebars", engine({
+/* app.engine("handlebars", engine({
     helpers: {
         formatDate: (date) => moment(date).format("YYYY-MM-DD")
     },
@@ -41,7 +42,24 @@ app.engine("handlebars", engine({
     }
 }));
 app.set("view engine", "handlebars");
-app.set("views", path.join(__dirname, "../views"));
+app.set("views", path.join(__dirname, "../views")); */
+
+app.engine("handlebars", engine({
+    defaultLayout: "main",
+    layoutsDir: path.join(__dirname, "../../frontend/views/layouts"),
+    partialsDir: path.join(__dirname, "../../frontend/views/partials"),
+    helpers: {
+        formatDate: (date) => moment(date).format("YYYY-MM-DD")
+    },
+    runtimeOptions: {
+        allowProtoPropertiesByDefault: true,
+        allowProtoMethodsByDefault: true
+    }
+}));
+
+app.set("view engine", "handlebars");
+app.set("views", path.join(__dirname, "../../frontend/views"));
+
 
 /* Middlewares Settings */
 

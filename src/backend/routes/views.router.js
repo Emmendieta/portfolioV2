@@ -8,6 +8,13 @@ class ViewsRouter extends RouterHelper {
     };
 
     init = () => {
-        //this.render("/", ["public"])
+        this.render("/", ["public"], viewsController.indexView);
+
+        /*USERS*/
+        this.render("/login", ["public"], viewsController.loginView);
     }
-}
+};
+
+const viewsRouter = (new ViewsRouter()).getRouter();
+
+export default viewsRouter;

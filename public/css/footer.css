@@ -1,0 +1,28 @@
+#footer {
+    display: flex;
+    flex-direction: column;
+}
+
+#ftDivLine {
+    width: 75%;
+    border-top: 1px solid rgba(0, 0, 0, 0.411);;
+    margin: 0 auto 20px auto;
+}
+
+
+#ftDivTop {
+    display: flex;
+    justify-content: space-between !important;
+    margin-top: 10px;
+}
+
+#ftDivBottom {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 0 0;
+
+}
+
+h1 {
+    color: white;
+}

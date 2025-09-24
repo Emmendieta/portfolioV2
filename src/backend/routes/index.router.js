@@ -1,5 +1,6 @@
 import RouterHelper from "../helpers/router.helper.js";
 import apiRouter from "./api.router.js";
+import viewsRouter from "./views.router.js";
 
 class IndexRouter extends RouterHelper {
     constructor() {
@@ -9,6 +10,7 @@ class IndexRouter extends RouterHelper {
 
     init = () => {
         this.use("/api", apiRouter);
+        this.use("/", viewsRouter);
     };
 };
 

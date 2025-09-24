@@ -1,0 +1,28 @@
+#navBar {
+    display: flex;
+    border: 1px solid rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+}
+
+#hdDivLine {
+    width: 75%;
+    border-top: 1px solid rgba(0, 0, 0, 0.411);
+    margin: 0 auto 20px auto;
+}
+
+#navSectionsContainer {
+    justify-content: space-between;
+}
+
+#navbarSectionLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbarSectionSearch {
+    padding: 5px;
+}
+
+#navbarSection {
+    padding: 5px;
+}
