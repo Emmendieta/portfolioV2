@@ -1,0 +1,86 @@
+<head>
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+
+<div id="divProfile">
+    {{!-- USER --}}
+    <div id="profileDiv">
+        <section id="profileDivSectTop">
+            <h2 id="profileDivH2Title">Profile Data:</h2>
+        </section>
+        <section id="profileDivDivSectMiddle">
+            <div class="profileDivDiv">
+                <h3 class="profileDivh3">Id: </h3>
+                <h3 class="profileDivh3">{{user._id}}</h3>
+            </div>
+            <div class="profileDivDiv">
+                <h3 class="profileDivh3">User Name: </h3>
+                <h3 class="profileDivh3">{{user.user}}</h3>
+            </div>
+            <div class="profileDivDiv">
+                <h3 class="profileDivh3">Email: </h3>
+                <h3 class="profileDivh3">{{user.email}}</h3>
+            </div>
+            <div class="profileDivDivBottom">
+                <a class="btn btn-outline-success" id="btnUpdateUserData" href="/update-user">Update User Data</a>
+            </div>
+        </section>
+    </div>
+    {{!-- PERSON --}}
+    <div id="profileDivPerson">
+        <section id="profileDivSectTop">
+            <h2 id="profileDivH2Title">Personal Data: </h2>
+        </section>
+        <section id="profileDivDivSectMiddle">
+            <div class="profileDivDiv">
+                <h3 class="profileDivh3">First Name: </h3>
+                <h3 class="profileDivh3">{{user.person.firstName}}</h3>
+            </div>
+            <div class="profileDivDiv">
+                <h3 class="profileDivh3">Last Name: </h3>
+                <h3 class="profileDivh3">{{user.person.lastName}}</h3>
+            </div>
+            <div class="profileDivDiv">
+                <h3 class="profileDivh3">DNI: </h3>
+                <h3 class="profileDivh3">{{user.person.dni}}</h3>
+            </div>
+            <div class="profileDivDiv">
+                <h3 class="profileDivh3">CUIL: </h3>
+                <h3 class="profileDivh3">{{user.person.cuil}}</h3>
+            </div>
+            <div class="profileDivDiv">
+                <h3 class="profileDivh3">Birthday: </h3>
+                <h3 class="profileDivh3">{{user.person.birthday}}</h3>
+            </div>
+            <div class="profileDivDiv">
+                <h3 class="profileDivh3">Job Title: </h3>
+                <h3 class="profileDivh3">{{user.person.jobTitles}}</h3>
+            </div>
+            <div class="profileDivDiv">
+                <h3 class="profileDivh3">City: </h3>
+                <h3 class="profileDivh3">{{user.person.city}}</h3>
+            </div>
+            <div class="profileDivDiv">
+                <h3 class="profileDivh3">Province: </h3>
+                <h3 class="profileDivh3">{{user.person.province}}</h3>
+            </div>
+            <div class="profileDivDiv">
+                <h3 class="profileDivh3">Country: </h3>
+                <h3 class="profileDivh3">{{user.person.country}}</h3>
+            </div>
+            <div class="profileDivDiv">
+                <h3 class="profileDivh3">About: </h3>
+                <h3 class="profileDivh3">{{user.person.about}}</h3>
+            </div>
+            <div class="profileDivDiv">
+                <h3 class="profileDivh3">Images: </h3>
+                <h3 class="profileDivh3">{{user.person.thumbnails}}</h3>
+            </div>
+            <div class="profileDivDivBottom">
+                <a class="btn btn-outline-success" id="btnUpdatePersonData" href="/update-person">Update Personal Data</a>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script type="module" src="/scripts/profile.js"></script>

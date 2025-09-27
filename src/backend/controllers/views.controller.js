@@ -33,8 +33,15 @@ class ViewsController {
     /*AUTH VIEWS */
 
     loginView = async (req, res) => res.status(200).render("login");
+
+    profileView = async (req, res) => {
+        const { user } = req;
+        const uid = user._id;;
+        const userPopulate = await this.uService.readByIdAndPopulate(uid, ["person"]);
+        res.status(200).render("profile", { user: userPopulate });
+    };
     
-}
+};
 
 const viewsController = new ViewsController();
 

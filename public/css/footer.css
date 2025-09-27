@@ -5,10 +5,9 @@
 
 #ftDivLine {
     width: 75%;
-    border-top: 1px solid rgba(0, 0, 0, 0.411);;
+    border-top: 1px solid rgba(0, 0, 0, 0.411);
     margin: 0 auto 20px auto;
 }
-
 
 #ftDivTop {
     display: flex;
@@ -20,7 +19,6 @@
     display: flex;
     justify-content: center;
     padding: 10px 0 0 0;
-
 }
 
 h1 {

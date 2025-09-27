@@ -2,15 +2,16 @@ import passport from "./passport.mid.js";
 
 const passportCB = (strategy) => async (req, res, next) => {
     passport.authenticate(strategy, (error, user, info) => {
-        if (error) { return next(error); };
+        if (error) {
+            return next(error);
+        }
         if (!user) {
-            const error = new Error(info.message || "Bad Auth");
+            const error = new Error(info.message || "Bad Auth!");
             error.statusCode = info.statusCode || 401;
             return next(error);
-        };
-        //VER SI LE PASO TODA LA INFO DEL USUARIO:
+        }
         req.user = user;
-        next()
+        next();
     })(req, res, next);
 };
 

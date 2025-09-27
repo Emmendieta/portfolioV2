@@ -11,12 +11,12 @@ passport.use(
         { passReqToCallback: true, usernameField: "email" },
         async (req, email, password, done) => {
             try {
-                if(!req.body.firstName || !req.body.lastName) { return done(null, null, { message: "Invalid Data!", statusCode: 400 }); };
+                if(!req.body.first_name || !req.body.last_name) { return done(null, null, { message: "Invalid Data!", statusCode: 400 }); };
                 let user = await usersRepository.readByFilter( { email });
-                if (user) { return done(null, null, { message: "invalid Credentials!", statusCode: 401 }); };
+                if (user) { return done(null, null, { message: "Invalid Credentials!", statusCode: 401 }); };
                 req.body.password = createHash(password);
                 user = await usersRepository.createOne(req.body);
-                done(null, user);
+                done(null, user); //primer parametro: Si ocurre un error, Segundo: son los datos del usuario que se guaran en req
             } catch (error) {
                 done(error);
             }
@@ -28,12 +28,13 @@ passport.use(
     "login",
     new LocalStrategy(
         { passReqToCallback: true, usernameField: "email" },
-        async (req, email, password, done) => {
+        async (req, email, password, done) =>{
             try {
-                let user = await usersRepository.readByFilter( { email });
-                if(!user) { return done(null, null, { message: "Invalid Credentials!", statusCode: 401 }); };
+                let user = await usersRepository.readByFilter({ email });
+                if (!user) { return done(null, null, { message: "Invalid Credentials!", statusCode: 401 }); };
                 const verifyPassword = compareHash(password, user.password);
-                if(!verifyPassword) { return done(null, null, { message: "Invalid Credential!", statusCode: 401 }); };
+                if (!verifyPassword) { return done(null, null, { message: "Invalids Credentials!", statusCode: 401 }); };
+                //Ahora creo el token:
                 const data = { user_id: user._id, email: user.email, role: user.role };
                 const token = createToken(data);
                 user.token = token;
@@ -48,15 +49,15 @@ passport.use(
 passport.use(
     "current",
     new PassportStrategy(
-        { 
-            jwtFromRequest: ExtractJwt.fromExtractors([(req) => rreqq?.cookies?.token]),
+        {
+            jwtFromRequest: ExtractJwt.fromExtractors([(req) => req?.cookies?.token]),
             secretOrKey: process.env.SECRET
         },
         async (data, done) => {
             try {
                 const { user_id, email, role } = data;
                 const user = await usersRepository.readByFilter({ _id: user_id, email, role });
-                if(!user) { return done(null, null, { message: "Forbidden!", statusCode: 403}); };
+                if (!user) { return done(null, null, { message: "Forbidden!", statusCode: 403 }); };
                 done(null, user);
             } catch (error) {
                 done(error);
@@ -68,16 +69,16 @@ passport.use(
 passport.use(
     "user",
     new PassportStrategy(
-        {
+        { 
             jwtFromRequest: ExtractJwt.fromExtractors([(req) => req?.cookies?.token]),
             secretOrKey: process.env.SECRET
         },
         async (data, done) => {
             try {
-                const { user_id, email, role} = data;
-                const user = await usersRepository.readByFilter( { _id: user_id, email, role });
-                if(!user) { return done(null, null, { message: "Forbidden!", statusCode: 403 }); };
-                done(null, user);;
+                const { user_id, email, role } = data;
+                const user = await usersRepository.readByFilter({ _id: user_id, email, role });
+                if (!user) { return done(null, null, { message: "Forbidden!", statusCode: 403 }); };
+                done (null, user);
             } catch (error) {
                 done(error);
             }
@@ -86,19 +87,19 @@ passport.use(
 );
 
 passport.use(
-    "admin", 
+    "admin",
     new PassportStrategy(
         {
-            jwtFromRequest: ExtractJwt.fromExtractors([(req) => reqq?.cookies?.token]),
+            jwtFromRequest: ExtractJwt.fromExtractors([(req) => req?.cookies?.token]),
             secretOrKey: process.env.SECRET
         },
         async (data, done) => {
             try {
-                const { user_id, email, role } = data;
+                const { user_id, email, role }= data;
                 const user = await usersRepository.readByFilter({ _id: user_id, email, role });
-                if(!user) { return done(null, null, { message: "Forbidden!", statusCode: 403}); };
+                if (!user || user.role !== "admin") { return done(null, null, { message: "Forbidden!", statusCode: 403}); };
                 done(null, user);
-            } catch(error) {
+            } catch (error) {
                 done(error);
             }
         }
