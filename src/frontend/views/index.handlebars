@@ -5,11 +5,11 @@
 <div>
     <section> {{!-- ACA VA LO DE LA PERSONA VER SI FALTA ALGO --}}
         <div id="topDiv">
-            <div id="topLeft">
+            <div id="topLeftPerson">
                 <h3>Person:</h3>
             </div>
-            <div id="topCenter"></div>
-            <div id="topRigth"></div>
+            <div id="topCenterPerson"></div>
+            <div id="topRightPerson"></div>
         </div>
         <ul>
             {{#each person}}
@@ -74,11 +74,11 @@
 
     <section> {{!-- ACA VA LA EDUCACION VER SI FALTA ALGO --}}
         <div id="topDiv">
-            <div id="topLeft">
+            <div id="topLeftEducation">
                 <h3>Educations:</h3>
             </div>
-            <div id="topCenter"></div>
-            <div id="topRigth"></div>
+            <div id="topCenterEducation"></div>
+            <div id="topRightEducation"></div>
         </div>
         <ul>
             {{#each educations}}
@@ -137,13 +137,13 @@
         </ul>
     </section>
 
-    <section> {{!-- ACA VAN LOS TRABAJOS --}}
+    <section> {{!-- ACA VAN LOS TRABAJOS  VER SI FALTA ALGO --}}
         <div id="topDiv">
-            <div id="topLeft">
+            <div id="topLeftWork">
                 <h3>Work:</h3>
             </div>
-            <div id="topCenter"></div>
-            <div id="topRigth"></div>
+            <div id="topCenterWork"></div>
+            <div id="topRightWork"></div>
         </div>
         <ul>
             {{#each works}}
@@ -192,11 +192,11 @@
 
     <section> {{!-- ACA VAN LOS PROYECTOS QUE HAY QUE VINCULARLOS CON LAS CATEGORIAS ASI SE PUEDE FILTRAR--}}
         <div id="topDiv">
-            <div id="topLeft">
+            <div id="topLeftProyect">
                 <h3>Proyects:</h3>
             </div>
-            <div id="topCenter"></div>
-            <div id="topRigth"></div>
+            <div id="topCenterProyect"></div>
+            <div id="topRightProyect"></div>
         </div>
         <ul>
             {{#each proyects}}
@@ -253,10 +253,35 @@
     </section>
 
     <section> {{!-- ACA VAN LOS LENGUAJES --}}
+        <div id="topDiv">
+            <div id="topLeftLanguage">
+                <h3>Languages:</h3>
+            </div>
+            <div id="topCenterlanguage"></div>
+            <div id="topRightLanguage"></div>
+        </div>
         <ul>
-            <li>
-
+            {{#each languages}}
+            <li class="ulLi">
+                <div class="card cardLanguage" style="width: 100%;" id="DivCard">
+                    <div class="ulLiDivImg">
+                        <img src="{{this.thumbnails}}" class="card-img-top object-fit-cover" alt="{{this._id}}"
+                            onerror="this.onerror=null; this.src='./img/imagen-no-disponible.png';">
+                    </div>
+                    <div class="card-body">
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Language Title: </h3>
+                            <h3 class="card-textv ulLiH3" id="languageTitleId">
+                                {{this.title}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Percent: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.percent}}</h3>
+                        </div>
+                    </div>
+                </div>
             </li>
+            {{/each}}
         </ul>
     </section>
 </div>

@@ -3,10 +3,11 @@ import auth from "./utils/auth.js";
 window.addEventListener("DOMContentLoaded", async () => {
     const currentUser = await auth.getCurrentUser();
     if (currentUser.response.role === "admin") {
-        renderAdminControls("person", "cardPerson", "topRight");
-        renderAdminControls("educations", "cardEducation", "TopRight");
-        renderAdminControls("works", "cardWork", "topRigth");
-        renderAdminControls("proyects", "cardProyect", "topRight");
+        renderAdminControls("person", "cardPerson", "topRightPerson");
+        renderAdminControls("educations", "cardEducation", "topRightEducation");
+        renderAdminControls("works", "cardWork", "topRightWork");
+        renderAdminControls("proyects", "cardProyect", "topRightProyect");
+        renderAdminControls("languages", "cardLanguage", "topRightLanguage");
     };
 });
 

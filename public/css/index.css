@@ -7,6 +7,16 @@ ul {
     display: flex;
     justify-content: space-between;
     color: whitesmoke;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#topLeftPerson, #topLeftEducation, #topLeftWork, #topLeftProyect, #topLeftLanguage {
+    margin-left: 10px;
+}
+
+#topRightPerson, #topRightEducation, #topRightWork, #topRightProyect, #topRightLanguage {
+    margin-right: 15px;
 }
 
 #educationAddBtn {
@@ -17,7 +27,7 @@ ul {
     margin-left: 10px;
 }
 
-.cardEducation, .cardPerson, .cardWork, .cardProyect {
+.cardEducation, .cardPerson, .cardWork, .cardProyect, .cardLanguage {
     display: flex;
     flex-direction: row;
     margin: 10px 10px 0 0;

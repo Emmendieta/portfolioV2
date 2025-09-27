@@ -3,6 +3,7 @@ import peopleService from "../services/people.service.js";
 import usersService from "../services/users.service.js";
 import worksService from "../services/works.service.js";
 import proyectsService from "../services/proyects.service.js";
+import languagesServices from "../services/languages.service.js";
 
 class ViewsController {
     constructor() {
@@ -11,6 +12,7 @@ class ViewsController {
         this.eService = educationsService;
         this.wService = worksService;
         this.proService = proyectsService;
+        this.lService = languagesServices;
     };
 
     indexView = async (req, res) => {
@@ -20,11 +22,12 @@ class ViewsController {
         const person = await this.pService.readAll();
         const works = await this.wService.readAll();
         const proyects = await this.proService.readAll();
+        const languages = await this.lService.readAll();
 
 
 
         const user = req.user || null;
-        res.status(200).render("index", {educations, person, works, proyects, isAdmin: user?.role === "admin" }); //Falta la lógica para el tipo de rol
+        res.status(200).render("index", {educations, person, works, proyects,languages, isAdmin: user?.role === "admin" }); //Falta la lógica para el tipo de rol
     };
 
     /*AUTH VIEWS */
