@@ -1,0 +1,44 @@
+ul {
+    margin: 10px 15px 5px 15px;
+    padding-left: 0;
+}
+
+#topDiv {
+    display: flex;
+    justify-content: space-between;
+    color: whitesmoke;
+}
+
+#educationAddBtn {
+    margin: 0 10px 15px 5px;
+}
+
+#topLeft h3 {
+    margin-left: 10px;
+}
+
+.cardEducation, .cardPerson, .cardWork, .cardProyect {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 10px 0 0;
+}
+
+.ulLiDivImg {
+    align-content: center;
+    align-items: center;
+}
+.ulLiDivImg img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.ulLiDivBody {
+    display: flex;
+}
+
+.ulLiH3 {
+    font-size: medium;
+    margin: 2px 2px;
+}

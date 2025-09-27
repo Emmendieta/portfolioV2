@@ -9,7 +9,7 @@ const educationSchema = new mongoose.Schema(
         dateEnd: { type: Date },
         linkInstitution: { type: String },
         iconInstitution: {type: String },
-        certificate: { type: String},
+        certificate: { type: String },
         linkCertificate: { type: String },
         finished: { type: Boolean },
         typeEducation: {

@@ -26,3 +26,8 @@
 #navbarSection {
     padding: 5px;
 }
+
+#navbarSectionButtons {
+    display: flex;
+    align-items: center;
+}

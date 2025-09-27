@@ -41,7 +41,7 @@ class UsersController {
             const { uid } = req.params;
             if (!isValidObjectId(uid)) { return res.json400("Invalid User ID!(C)"); };
             const { populate } = req.query;
-            const populateFields = populate ? populate.split(",") : [];
+            const populateFields = populate ? populate.split("&") : [];
             const user = await this.uService.readByIdAndPopulate(uid, populateFields);
             if (!user) { return res.json404("User Not Found!(C)"); };
             return res.json200(user);

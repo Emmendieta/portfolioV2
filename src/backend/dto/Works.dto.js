@@ -11,6 +11,7 @@ class WorksDTO {
         this.dateEnd = data.dateEnd;
         this.company = data.company;
         this.linkCompany = data.linkCompany;
+        this.finished = data.finished;
         this.description = data.description;
         this.thumbnails = data.thumbnails || [];
         if (PERSISTENCE !== "mongo") {

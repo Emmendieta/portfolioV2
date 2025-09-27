@@ -1,25 +1,9 @@
+import auth from "./utils/auth.js";
+
 const divNavBarButtons = document.getElementById("navBarButtons");
 //Falta la lógica del boton de buscar:
 const btnSearch = document.getElementById("btnSearch");
 
-
-const getCurrentUser = async () => {
-    const opts = {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include"
-    };
-    try {
-        const url = "/api/auth/current";
-        let response = await fetch(url, opts);
-        return await response.json();
-
-    } catch (error) {
-        //FALTA EL LOGGER
-        console.log(error);
-        return { error: true };
-    }
-};
 
 const renderGuestNav = () => {
     divNavBarButtons.innerHTML = `
@@ -43,7 +27,7 @@ const renderAdminNav = () => {
 };
 
 const verifyCurrent = async () => {
-    const response = await getCurrentUser();
+    const response = await auth.getCurrentUser();
     if(response.error) { renderGuestNav(); }
     else {
         const role = response.response.role;

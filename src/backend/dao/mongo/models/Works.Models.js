@@ -7,6 +7,7 @@ const worksSchema = new mongoose.Schema(
         dateEnd: { type: Date },
         company: { type: String, required: true },
         linkCompany: { type: String },
+        finished: { type: Boolean },
         description: { type: String, required: true },
         thumbnails: [{ type: String }]
     },

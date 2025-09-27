@@ -1,47 +1,265 @@
-{{!-- <head>
+<head>
     <link rel="stylesheet" href="/css/index.css">
 </head>
---}}
-<h1>Main</h1>
+
 <div>
-    <section>
-        <ul id="petsGrid">
-            {{#each pets}}
-            <li>
-                <div class="card" style="width: 18rem;" id="petsDivCard">
-                    <div class="petsUlLiDiv">
-                        <img src={{this.image}} class="card-img-top object-fit-cover" alt={{this._id}}>
+    <section> {{!-- ACA VA LO DE LA PERSONA VER SI FALTA ALGO --}}
+        <div id="topDiv">
+            <div id="topLeft">
+                <h3>Person:</h3>
+            </div>
+            <div id="topCenter"></div>
+            <div id="topRigth"></div>
+        </div>
+        <ul>
+            {{#each person}}
+            <li class="ulLi">
+                <div class="card cardPerson" style="width: 100%;" id="DivCard">
+                    <div class="ulLiDivImg">
+                        <img src="{{this.thumbnails}}" class="card-img-top object-fit-cover" alt="{{this._id}}"
+                            onerror="this.onerror=null; this.src='./img/imagen-no-disponible.png';">
                     </div>
                     <div class="card-body">
-                        <div class="petsUlLiDiv">
-                            <h3 class="petsUlLih3">Name: </h3>
-                            <h3 class="card-textv petsUlLih3" id="petsTitleId">{{this.name}}</h3>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">First Name: </h3>
+                            <h3 class="card-textv ulLiH3" id="personFirstNameId">
+                                {{this.firstName}}</h3>
                         </div>
-                        <div class="petsUlLiDiv">
-                            <h3 class="petsUlLih3">Specie: </h3>
-                            <h3 class="card-textv petsUlLih3">{{this.specie}}</h3>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Last Name: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.lastName}}</h3>
                         </div>
-                        <div class="petsUlLiDiv">
-                            <h3 class="petsUlLih3">BirthDate: </h3>
-                            <h3 class="card-textv petsUlLih3">{{this.birthDate}}</h3>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">D.N.I.: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.dni}}</h3>
                         </div>
-                        <div class="petsUlLiDiv">
-                            <h3 class="petsUlLih3">Adpoted: </h3>
-                            <h3 class="card-textv petsUlLih3">{{this.adopted}}</h3>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">CUIL: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.cuil}}</h3>
                         </div>
-                        <div class="petsUlLiDiv">
-                            <h3 class="petsUlLih3">Owner: </h3>
-                            <h3 class="card-textv petsUlLih3">{{this.owner}}</h32>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Birthday: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.birthday}}</h3>
                         </div>
-                        <div class="petsUlLiDiv">
-                            <a href="/details/{{this._id}}" class="btn btn-primary">More Details</a>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Jobs Titles: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.jobTitles}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Certificate: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.certificate}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">City: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.city}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Province: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.province}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Country: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.country}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">About Me: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.about}}</h3>
                         </div>
                     </div>
                 </div>
             </li>
             {{/each}}
+        </ul>
     </section>
-    </ul>
+
+    <section> {{!-- ACA VA LA EDUCACION VER SI FALTA ALGO --}}
+        <div id="topDiv">
+            <div id="topLeft">
+                <h3>Educations:</h3>
+            </div>
+            <div id="topCenter"></div>
+            <div id="topRigth"></div>
+        </div>
+        <ul>
+            {{#each educations}}
+            <li class="ulLi">
+                <div class="card cardEducation" style="width: 100%;" id="DivCard">
+                    <div class="ulLiDivImg">
+                        <img src="{{this.iconInstitution}}" class="card-img-top object-fit-cover" alt="{{this._id}}"
+                            onerror="this.onerror=null; this.src='./img/imagen-no-disponible.png';">
+                    </div>
+                    <div class="card-body">
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Institution Name: </h3>
+                            <h3 class="card-textv ulLiH3" id="educactionsInstitutionNameId">
+                                {{this.institutionName}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Title: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.title}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Date Start: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.dateStart}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Is finished?: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.finished}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Date End: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.dateEnd}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Link Institution: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.linkInstitution}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Certificate: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.certificate}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Link Certificate: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.linkCertificate}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Type of Education: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.typeEducation}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Description: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.description}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </section>
+
+    <section> {{!-- ACA VAN LOS TRABAJOS --}}
+        <div id="topDiv">
+            <div id="topLeft">
+                <h3>Work:</h3>
+            </div>
+            <div id="topCenter"></div>
+            <div id="topRigth"></div>
+        </div>
+        <ul>
+            {{#each works}}
+            <li class="ulLi">
+                <div class="card cardWork" style="width: 100%;" id="DivCard">
+                    <div class="ulLiDivImg">
+                        <img src="{{this.thumbnails}}" class="card-img-top object-fit-cover" alt="{{this._id}}"
+                            onerror="this.onerror=null; this.src='./img/imagen-no-disponible.png';">
+                    </div>
+                    <div class="card-body">
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Job Title: </h3>
+                            <h3 class="card-textv ulLiH3" id="wroksJobTitleId">
+                                {{this.jobTitle}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Company: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.company}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Date Start: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.dateStart}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Is finished?: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.finished}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Date End: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.dateEnd}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Link Company: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.linkCompany}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Description: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.description}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </section>
+
+    <section> {{!-- ACA VAN LOS PROYECTOS QUE HAY QUE VINCULARLOS CON LAS CATEGORIAS ASI SE PUEDE FILTRAR--}}
+        <div id="topDiv">
+            <div id="topLeft">
+                <h3>Proyects:</h3>
+            </div>
+            <div id="topCenter"></div>
+            <div id="topRigth"></div>
+        </div>
+        <ul>
+            {{#each proyects}}
+            <li class="ulLi">
+                <div class="card cardProyect" style="width: 100%;" id="DivCard">
+                    <div class="ulLiDivImg">
+                        <img src="{{this.thumbnails}}" class="card-img-top object-fit-cover" alt="{{this._id}}"
+                            onerror="this.onerror=null; this.src='./img/imagen-no-disponible.png';">
+                    </div>
+                    <div class="card-body">
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Proyect Title: </h3>
+                            <h3 class="card-textv ulLiH3" id="proyectsTitleId">
+                                {{this.title}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Company: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.company}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Link Company: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.linkCompany}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Date Start: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.dateStart}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Date End: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.dateEnd}}</h3>
+                        </div>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Link Proyect: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.linkProyect}}</h3>
+                        </div>
+
+{{!-- FALTA LOS LENGUAJES --}}
+
+{{!--                         <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Link Proyect: </h3>
+                        </div> --}}  
+
+                        
+                            <h3 class="card-textv ulLiH3">{{this.linkProyect}}</h3>
+                        <div class="ulLiDivBody">
+                            <h3 class="ulLiH3">Description: </h3>
+                            <h3 class="card-textv ulLiH3">{{this.description}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </section>
+
+    <section> {{!-- ACA VAN LOS LENGUAJES --}}
+        <ul>
+            <li>
+
+            </li>
+        </ul>
+    </section>
 </div>
 
-{{!-- <script src="/scripts/index.js"></script> --}}
+
+<script type="module" src="/scripts/index.js"></script>
