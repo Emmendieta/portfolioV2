@@ -8,7 +8,7 @@ class SocialMediasController {
 
     createSocialMedia = async (req, res) => {
         const data = req.body;
-        if (!data || !data.title || !data.linkSocial) { return res.json400("Missing Information!(C)"); };
+        if (!data || !data.title || !data.linkSocial || !data.type) { return res.json400("Missing Information!(C)"); };
         const verifyTitle = await this.verifySocialMediaTitle(data.title);
         if (verifyTitle === 1) { return res.json400("Social Media alredy Exist!(C)"); }
         else {
@@ -68,7 +68,7 @@ class SocialMediasController {
 
     verifySocialMediaTitle = async (title) => {
         const verifyTitle = await this.sMService.readByFilter({ title });
-        if (!verifyTitle) { return 0; }
+        if (!verifyTitle || verifyTitle.length === 0) { return 0; }
         else { return 1; };
     };
 };

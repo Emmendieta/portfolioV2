@@ -8,6 +8,7 @@ class SocialMediasDTO {
         };
         this.title = data.title;
         this.linkSocial = data.linkSocial;
+        this.type = data.type || "social";
         this.thumbnails = data.thumbnails || [];
         if (PERSISTENCE !== "mongo") {
             this.createdAt = new Date();

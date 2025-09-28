@@ -4,6 +4,7 @@ import usersService from "../services/users.service.js";
 import worksService from "../services/works.service.js";
 import proyectsService from "../services/proyects.service.js";
 import languagesServices from "../services/languages.service.js";
+import socialMediasService from "../services/socialMedias.service.js";
 
 class ViewsController {
     constructor() {
@@ -13,6 +14,7 @@ class ViewsController {
         this.wService = worksService;
         this.proService = proyectsService;
         this.lService = languagesServices;
+        this.sMService = socialMediasService;
     };
 
     indexView = async (req, res) => {
@@ -23,11 +25,12 @@ class ViewsController {
         const works = await this.wService.readAll();
         const proyects = await this.proService.readAll();
         const languages = await this.lService.readAll();
-
-
+        //Separo la socialMedias en social o contact:
+        const contacts = await this.sMService.readByFilter({ type: "contact" });
+        const socials = await this.sMService.readByFilter({ type: "social" });
 
         const user = req.user || null;
-        res.status(200).render("index", {educations, person, works, proyects,languages, isAdmin: user?.role === "admin" }); //Falta la lógica para el tipo de rol
+        res.status(200).render("index", {educations, person, works, proyects, languages, contacts, socials, isAdmin: user?.role === "admin" }); //Falta la lógica para el tipo de rol
     };
 
     /*AUTH VIEWS */

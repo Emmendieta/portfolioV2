@@ -1,5 +1,29 @@
 const baseHeader = { "Content-Type": "application/json" };
 
+const getData = async (baseUrl) => {
+    try {
+        if (!baseUrl) {
+            //LOGGER:
+            console.error(error.message);
+            //SWEET ALERT:
+            alert("URL is needed!");
+            return;
+        };
+        let opts = {
+            method: "GET",
+            headers: { "Content-Type": "application/json" }
+        };
+        let url = `/api/${baseUrl}`;
+        let response = await fetch(url, opts);
+        return await response.json();
+    } catch (error) {
+        //LOGGER:
+        console.error(error.message);
+        //SWEET ALERT:
+        alert("Error getting data!")
+    }
+};
+
 const getDataPopulate = async (baseUrl, populateFields) => {
     try {
         if (!baseUrl || !populateFields) {
@@ -56,4 +80,28 @@ const updateData = async (baseUrl, data = {}) => {
     }
 };
 
-export default { updateData, getDataPopulate };
+const deleteData = async (baseUrl, id) => {
+    try {
+        let opts;
+        if (!baseUrl || !id) {
+            //SWEET ALERT:
+            alert("Error in deleting Data, missing Url or Id!");
+            return;
+        };
+        opts = {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" }
+        };
+        let url = `/api/${baseUrl}/${id}`;
+        let response = await fetch(url, opts);
+        response = await response.json();
+        return response;
+    } catch (error) {
+        //LOGGER:
+        console.error(error.message);
+        //SWEET ALERT:
+        alert("Error updating data!")
+    }
+}
+
+export default { updateData, getDataPopulate, getData, deleteData };

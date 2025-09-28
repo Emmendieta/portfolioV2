@@ -1,13 +1,14 @@
 import auth from "./utils/auth.js";
+import helpers from "./utils/helpers.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
     const currentUser = await auth.getCurrentUser();
-    if (currentUser.error === "jwt expired") { 
+    if (currentUser.error === "jwt expired") {
         //SWEET ALERT
         alert("Token expired, please login again!");
-        return; 
+        return;
     }
-    else if (currentUser.error === "Bad Auth!!!" || "Forbidden!!!") { return; }
+    else if (currentUser.error === "Bad Auth!!!" || currentUser.error === "Forbidden!!!") { return; }
     else if (currentUser.response.role === "admin") {
         renderAdminControls("person", "cardPerson", "topRightPerson");
         renderAdminControls("educations", "cardEducation", "topRightEducation");
@@ -23,7 +24,7 @@ const renderAdminControls = (resource, cardClass, topRightId) => {
     buttonAdd.href = `/${resource}/create`;
     buttonAdd.className = "btn btn-outline-success";
     buttonAdd.id = `${resource}AddBtn`;
-    buttonAdd.innerText = `New ${capitalize(resource)}`;
+    buttonAdd.innerText = `New ${helpers.capitalize(resource)}`;
 
     const topRightContainer = document.getElementById(topRightId);
     if (topRightContainer) topRightContainer.appendChild(buttonAdd);
@@ -69,7 +70,7 @@ const renderAdminControls = (resource, cardClass, topRightId) => {
                     alert(result.error.message);
                 } else {
                     //Cambiar por Sweet Alert:
-                    alert(`${capitalize(resource)} deleted!`);
+                    alert(`${helpers.capitalize(resource)} deleted!`);
                     location.reload();
                 }
             } catch (error) {
@@ -87,6 +88,3 @@ const renderAdminControls = (resource, cardClass, topRightId) => {
         cardBody.appendChild(adminControls);
     });
 };
-
-// Helper: capitalizar primera letra (VER SI ESTE LO METO EN OTRO SCRIPT)
-const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1);
