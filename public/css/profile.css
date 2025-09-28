@@ -9,7 +9,8 @@
     justify-content: center;
 }
 
-.profileDivh3, #profileDivH2Title {
+.profileDivh3,
+#profileDivH2Title {
     color: whitesmoke;
 }
 
@@ -20,11 +21,17 @@
 .profileDivh3 {
     margin-left: 10px;
 }
-#profileDiv, #profileDivPerson {
+
+#profileDiv,
+#profileDivPerson {
+    transition: box-shadow 1.5s;
     margin: 15px;
+    border: 1px;
+    border-radius: 10px;
 }
 
-#profileDiv:hover, #profileDivPerson:hover {
+#profileDiv:hover,
+#profileDivPerson:hover {
     transition: 1.5s;
     box-shadow: rgb(85, 85, 85) 5px 5px 5px 5px;
 }
