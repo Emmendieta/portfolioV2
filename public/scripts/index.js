@@ -2,7 +2,13 @@ import auth from "./utils/auth.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
     const currentUser = await auth.getCurrentUser();
-    if (currentUser.response.role === "admin") {
+    if (currentUser.error === "jwt expired") { 
+        //SWEET ALERT
+        alert("Token expired, please login again!");
+        return; 
+    }
+    else if (currentUser.error === "Bad Auth!!!" || "Forbidden!!!") { return; }
+    else if (currentUser.response.role === "admin") {
         renderAdminControls("person", "cardPerson", "topRightPerson");
         renderAdminControls("educations", "cardEducation", "topRightEducation");
         renderAdminControls("works", "cardWork", "topRightWork");

@@ -1,0 +1,62 @@
+<head>
+    <link rel="stylesheet" href="/css/update-data.css">
+</head>
+
+<div id="updateDataDivSectTop">
+    <h2 id="updateDataDivH2Title">Personal Data: </h2>
+</div>
+
+<div id="divUdapteData">
+    <form id="formUpdateData">
+        <div class="updateDataDivDiv">
+            <h3 class="updateDataDivh3">First Name: </h3>
+            <input type="text" class="form-control" id="inputFirstName" value="{{#if user}}{{user.person.firstName}}{{/if}}">
+        </div>
+        <div class="updateDataDivDiv">
+            <h3 class="updateDataDivh3">Last Name: </h3>
+            <input type="text" class="form-control" id="inputLastName" value="{{#if user}}{{user.person.lastName}}{{/if}}">
+        </div>
+        <div class="updateDataDivDiv">
+            <h3 class="updateDataDivh3">DNI: </h3>
+            <input type="number" class="form-control" id="inputDNI" value="{{#if user}}{{user.person.dni}}{{/if}}">
+        </div>
+        <div class="updateDataDivDiv">
+            <h3 class="updateDataDivh3">CUIL: </h3>
+            <input type="number" class="form-control" id="inputCUIL" value="{{#if user}}{{user.person.cuil}}{{/if}}">
+        </div>
+        <div class="updateDataDivDiv">
+            <h3 class="updateDataDivh3">Birthday: </h3>
+            <input type="date" class="form-control" id="inputBirthday" value="{{#if user}}{{formatDate user.person.birthday}}{{/if}}">
+        </div>
+        <div class="updateDataDivDiv">
+            <h3 class="updateDataDivh3">Job Title: </h3>
+            <input type="text" class="form-control" id="inputJobTitle" value="{{#if user}}{{user.person.jobTitles}}{{/if}}">
+        </div>
+        <div class="updateDataDivDiv">
+            <h3 class="updateDataDivh3">City: </h3>
+            <input type="text" class="form-control" id="inputCity" value="{{#if user}}{{user.person.city}}{{/if}}">
+        </div>
+        <div class="updateDataDivDiv">
+            <h3 class="updateDataDivh3">Province: </h3>
+            <input type="text" class="form-control" id="inputProvince" value="{{#if user}}{{user.person.province}}{{/if}}">
+        </div>
+        <div class="updateDataDivDiv">
+            <h3 class="updateDataDivh3">Country: </h3>
+            <input type="text" class="form-control" id="inputCountry" value="{{#if user}}{{user.person.country}}{{/if}}">
+        </div>
+        <div class="updateDataDivDiv">
+            <h3 class="updateDataDivh3">About: </h3>
+            <input type="text" class="form-control" id="inputAbout" value="{{#if user}}{{user.person.about}}{{/if}}">
+        </div>
+        <div class="updateDataDivDiv">
+            <h3 class="updateDataDivh3">Images: </h3>
+            <input type="text" class="form-control" id="inputThumbnails" value="{{#if user}}{{user.person.thumbnails}}{{/if}}">
+        </div>
+        <div class="updateDataDivDivBottom">
+            <a class="btn btn-outline-success" type="submit" id="btnGoBack" href="/profile">Go Back</a>
+            <button class="btn btn-outline-success" type="button" id="btnUpdatePersonData">Update Personal Data</button>
+        </div>
+    </form>
+</div>
+
+<script type="module" src="/scripts/update-person.js"></script>

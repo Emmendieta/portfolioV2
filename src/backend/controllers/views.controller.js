@@ -36,9 +36,17 @@ class ViewsController {
 
     profileView = async (req, res) => {
         const { user } = req;
-        const uid = user._id;;
+        const uid = user._id;
         const userPopulate = await this.uService.readByIdAndPopulate(uid, ["person"]);
         res.status(200).render("profile", { user: userPopulate });
+    };
+
+    updatePersonView = async (req, res) => {
+        const { user } = req;
+        const uid = user._id;
+        console.log(uid);
+        const userPopulate = await this.uService.readByIdAndPopulate(uid, ["person"]);
+        res.status(200).render("update-person", { user: userPopulate });
     };
     
 };

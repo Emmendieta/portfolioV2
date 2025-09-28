@@ -1,0 +1,47 @@
+#updateDataDivSectTop {
+    display: flex;
+    color: whitesmoke;
+    justify-content: space-around;
+}
+
+#updateDataDivH2Title {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-decoration: underline;
+    text-shadow: 5px 5px 5px rgb(85, 85, 85);
+}
+
+#divUdapteData {
+    display: flex;
+    justify-content: space-around;
+}
+
+#formUpdateData {
+    width: 50%;
+    padding: 30px;
+    margin-bottom: 20px;
+    border: 1px;
+    border-radius: 10px;
+}
+
+#formUpdateData:hover {
+    transition: 1.5s;
+    box-shadow: rgb(85, 85, 85) 5px 5px 5px 5px;
+}
+
+.updateDataDivh3 {
+    font-size: medium;
+    color: whitesmoke;
+    margin: 5px 0;
+}
+
+.updateDataDivDiv input {
+    font-size: medium;
+    text-align: center;
+}
+
+.updateDataDivDivBottom {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+}
