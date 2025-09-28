@@ -44,9 +44,15 @@ class ViewsController {
     updatePersonView = async (req, res) => {
         const { user } = req;
         const uid = user._id;
-        console.log(uid);
         const userPopulate = await this.uService.readByIdAndPopulate(uid, ["person"]);
         res.status(200).render("update-person", { user: userPopulate });
+    };
+
+    updateUserView = async (req, res) => {
+        const { user } = req;
+        const uid = user._id;
+        const userData = await this.uService.readById(uid);
+        res.status(200).render("update-user", { user: userData });
     };
     
 };

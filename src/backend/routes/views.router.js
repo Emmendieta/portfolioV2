@@ -14,6 +14,7 @@ class ViewsRouter extends RouterHelper {
         this.render("/login", ["public"], viewsController.loginView);
         this.render("/profile", ["user", "admin"], viewsController.profileView);
         this.render("/update-person", ["user", "admin"], viewsController.updatePersonView);
+        this.render("/update-user", ["user", "admin"], viewsController.updateUserView);
     }
 };
 

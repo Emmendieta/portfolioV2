@@ -1,0 +1,38 @@
+<head>
+    <link rel="stylesheet" href="/css/update-data.css">
+</head>
+
+<div id="updateDataDivSectTop">
+    <h2 id="updateDataDivH2Title">User Data:</h2>
+</div>
+
+<div id="divUdapteData">
+    <form id="formUpdateData">
+        <div class="updateDataDivDiv">
+            <h3 class="updateDataDivh3">User Id: </h3>
+            <input type="text" class="form-control" id="inputUserId" value="{{#if user}}{{user._id}}{{/if}}" disabled>
+        </div>
+        <div class="updateDataDivDiv">
+            <h3 class="updateDataDivh3">Email: </h3>
+            <input type="text" class="form-control" id="inputEmail" value="{{#if user}}{{user.email}}{{/if}}">
+        </div>
+        <div class="updateDataDivDiv">
+            <h3 class="updateDataDivh3">Password: </h3>
+            <input type="password" class="form-control" id="inputPassword" value="{{#if user}}{{user.password}}{{/if}}">
+        </div>
+        <div class="updateDataDivDiv">
+            <h3 class="updateDataDivh3">Verify Password: </h3>
+            <input type="password" class="form-control" id="inputVerifyPassword" value="{{#if user}}{{user.password}}{{/if}}">
+        </div>
+        <div class="updateDataDivDiv">
+            <h3 class="updateDataDivh3">Role: </h3>
+            <input type="text" class="form-control" id="inputRole" value="{{#if user}}{{user.role}}{{/if}}">
+        </div>
+        <div class="updateDataDivDivBottom">
+            <a class="btn btn-outline-success" type="submit" id="btnGoBack" href="/profile">Go Back</a>
+            <button class="btn btn-outline-success" type="button" id="btnUpdateUserData">Update User Data</button>
+        </div>
+    </form>
+</div>
+
+<script type="module" src="/scripts/update-user.js"></script>

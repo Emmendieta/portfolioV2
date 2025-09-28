@@ -64,7 +64,7 @@ const updatePersonalData = async () => {
             };
             const pid = currentUser.response.person._id;
             url = `people/${pid}`;
-            const update = abm.updateData(url, data);
+            const update = await abm.updateData(url, data);
             if (update.error) {
                 //LOGGER:
                 console.error(update.error.message);
