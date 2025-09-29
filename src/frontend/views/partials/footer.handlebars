@@ -5,6 +5,52 @@
 <footer class="bg-dark" id="footer">
     <div id="ftDivLine"></div>
     <div id="ftDivTop">
+        <div id="adminSocialMedias"></div>
+    </div>
+    <div id="ftDivMiddle">
+        <section id="secContacts">
+            <ul id="contactList">
+                {{#each contacts}}
+                <li data-id="{{this._id}}">
+                    <a href="{{this.linkSocial}}" target="_blank" title="{{this.title}}">
+                        <img src="{{this.thumbnails.[0]}}" alt="{{this.title}}" class="socialMediaIcon"
+                            onerror="this.onerror=null;this.src='/img/imagen-no-disponible.png';">
+                        <h5>{{this.title}}</h5>
+                    </a>
+                </li>
+                {{/each}}
+            </ul>
+        </section>
+        <section>
+            <h5>Aca va una firma con otra letra</h5>
+        </section>
+        <section id="secSocialMedias">
+            <ul id="socialMediaList">
+                {{#each socials}}
+                <li data-id="{{this._id}}">
+                    <a href="{{this.linkSocial}}" target="_blank" title="{{this.title}}">
+                        <img src="{{this.thumbnails.[0]}}" alt="{{this.title}}" class="socialMediaIcon"
+                            onerror="this.onerror=null;this.src='/img/imagen-no-disponible.png';">
+                        <h5>{{this.title}}</h5>
+                    </a>
+                </li>
+                {{/each}}
+            </ul>
+        </section>
+    </div>
+    <div id="ftDivBottom">
+        <section>
+            <h1 id="copyRigths">© Todos los derechos reserados.</h1>
+        </section>
+    </div>
+</footer>
+
+<script type="module" src="/scripts/footer.js"></script>
+
+
+{{!-- <footer class="bg-dark" id="footer">
+    <div id="ftDivLine"></div>
+    <div id="ftDivTop">
         <section id="secContacts">
             <ul id="contactList">
                 {{#each contacts}}
@@ -38,6 +84,4 @@
             <h1 id="copyRigths">© Todos los derechos reserados.</h1>
         </section>
     </div>
-</footer>
-
-<script type="module" src="/scripts/footer.js"></script>
+</footer> --}}

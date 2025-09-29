@@ -42,12 +42,16 @@ const renderAdminControls = (resource, cardClass, topRightId) => {
         const editButton = document.createElement("a");
         editButton.href = `/${resource}/edit/${id}`;
         editButton.className = "btn btn-outline-primary me-2";
-        editButton.innerHTML = "Edit";
+        //editButton.innerHTML = "Edit";
+        editButton.innerHTML = `<img src="/img/icons/pen.png" alt="Add">`;
+        editButton.id = "editButtonGeneral";
 
         //Boton Eliminar:
         const deleteButton = document.createElement("button");
         deleteButton.className = "btn btn-outline-danger";
-        deleteButton.innerText = "Delete";
+        //deleteButton.innerText = "Delete";
+        deleteButton.innerHTML = `<img src="/img/icons/trash.png" alt="Add">`;
+        deleteButton.id = "deleteButtonGeneral";
 
         //Evento para eliminar:
         deleteButton.addEventListener("click", async () => {

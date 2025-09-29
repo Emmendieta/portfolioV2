@@ -9,10 +9,16 @@
 #ftDivLine {
     width: 75%;
     border-top: 1px solid rgba(0, 0, 0, 0.411);
-    margin: 0 auto 10px auto;
+    margin: 10px auto 0 auto;
 }
 
 #ftDivTop {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap; 
+}
+
+#ftDivMiddle {
     display: flex;
     justify-content: space-between !important;
     margin-top: 10px;
@@ -22,7 +28,7 @@
 #ftDivBottom {
     display: flex;
     justify-content: center;
-    padding: 10px 0 0 0;
+    padding: 0 0 0 0;
 }
 
 h1 {
@@ -78,8 +84,7 @@ h5 {
 }
 
 .editionsControls {
-    flex-direction: column !important;
-    justify-content: flex-start;
+    justify-self: center;
     margin: 0;
     padding: 0;
 }
@@ -87,3 +92,18 @@ h5 {
 #copyRigths {
     font-size: 10px;
 }
+
+.iconABMPlus-sm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5em;
+    height: 1.5em;
+    margin: 5px;
+    border-radius: 100%;
+}
+
+.iconABMPlus-sm img{
+    width: 1.2em;
+    height: 1.2em; 
+} 

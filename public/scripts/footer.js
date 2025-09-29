@@ -44,22 +44,25 @@ const renderAdminControls = (liElement, resource, sid) => {
         //Boton crear:
         const buttonAddSocialMedia = document.createElement("a");
         buttonAddSocialMedia.href = `/${resource}/create`;
-        buttonAddSocialMedia.className = "btn btn-outline-success";
+        buttonAddSocialMedia.className = "btn btn-outline-success iconABMPlus-sm";
         buttonAddSocialMedia.id = `${resource}.addBtnSocialMedia`;
-        buttonAddSocialMedia.innerText = "Add Social Media";
+        buttonAddSocialMedia.innerHTML = `<img src="/img/icons/plus-circle-fill.png" alt="Add">`;
+        //buttonAddSocialMedia.innerText = "Add Social Media";
         adminContainer.appendChild(buttonAddSocialMedia);
     };
 
     //Boton Editar:
     const editButtonSocialMedia = document.createElement("a");
     editButtonSocialMedia.href = `/${resource}/edit/${sid}`;
-    editButtonSocialMedia.className = "btn btn-outline-primary btn-sm";
-    editButtonSocialMedia.innerText = "Edit";
+    editButtonSocialMedia.className = "btn btn-outline-primary btn-sm iconABMPlus-sm";
+    //editButtonSocialMedia.innerText = "Edit";
+    editButtonSocialMedia.innerHTML = `<img src="/img/icons/pen.png" alt="Add">`;
 
     //Boton Eliminar:
     const deleteButtonSocialMedia = document.createElement("button");
-    deleteButtonSocialMedia.className = "btn btn-outline-danger btn-sm";
-    deleteButtonSocialMedia.innerText = "Delete";
+    deleteButtonSocialMedia.className = "btn btn-outline-danger btn-sm iconABMPlus-sm";
+    //deleteButtonSocialMedia.innerText = "Delete";
+    deleteButtonSocialMedia.innerHTML = `<img src="/img/icons/trash.png" alt="Add">`;
 
     //Evento Eliminar 
     deleteButtonSocialMedia.addEventListener("click", async () => {
