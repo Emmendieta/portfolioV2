@@ -27,6 +27,7 @@ class DaoMongo {
     };
 
     readByFilter = async (filter) => await this.model.find(filter);
+    readOneByFilter = async (filter) => await this.model.findOne(filter);
     updateById = async (id, data) => await this.model.findByIdAndUpdate(id, data, { new: true });
     destroyById = async (id) =>await this.model.findByIdAndDelete(id);
 

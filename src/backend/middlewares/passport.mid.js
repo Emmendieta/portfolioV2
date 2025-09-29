@@ -30,7 +30,7 @@ passport.use(
         { passReqToCallback: true, usernameField: "email" },
         async (req, email, password, done) =>{
             try {
-                let user = await usersRepository.readByFilter({ email });
+                let user = await usersRepository.readOneByFilter({ email });
                 if (!user) { return done(null, null, { message: "Invalid Credentials!", statusCode: 401 }); };
                 const verifyPassword = compareHash(password, user.password);
                 if (!verifyPassword) { return done(null, null, { message: "Invalids Credentials!", statusCode: 401 }); };

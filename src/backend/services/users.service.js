@@ -11,6 +11,7 @@ class UsersService {
         return await this.manager.readByIdAndPopulate(uid, populateFields);
     };
     readByFilter = async (filter) => await this.manager.readByFilter(filter);
+    readOneByFilter = async (filter) => await this.manager.readOneByFilter(filter);
     updateById = async (uid, data) => await this.manager.updateById(uid, data);
     destroyById = async (uid) => await this.manager.destroyById(uid);
 };

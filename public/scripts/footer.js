@@ -6,8 +6,6 @@ const setSocialMedias = async () => {
 
         const currentUser = await auth.getCurrentUser();
         if (currentUser.error === "jwt expired") {
-            //SWEET ALERT
-            alert("Token expired, please login again!");
             return;
         }
         else if (currentUser.error === "Bad Auth!!!" || currentUser.error === "Forbidden!!!") { return; }

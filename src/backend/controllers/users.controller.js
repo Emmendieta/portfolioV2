@@ -31,7 +31,7 @@ class UsersController {
     getuserByFitlter = async (req, res) => {
         const { email } = req.params;
         if (!email) { return res.json400("Missing Email!(C)"); };
-        const user = await this.uService.readByFilter({ email });
+        const user = await this.uService.readOneByFilter({ email });
         if (!user) { return res.json404("User Not Found!(C)"); };
         return res.json200(user);
     };

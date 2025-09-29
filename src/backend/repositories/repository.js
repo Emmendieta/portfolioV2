@@ -21,6 +21,7 @@ class Repository {
         return await this.manager.readByIdAndPopulate(id, populateFields);
     };
     readByFilter = async (filter) => await this.manager.readByFilter(filter);
+    readOneByFilter = async(filter) => await this.manager.readOneByFilter(filter);
     updateById = async (id, data) => await this.manager.updateById(id, data);
     destroyById = async (id) => await this.manager.destroyById(id);
 };
